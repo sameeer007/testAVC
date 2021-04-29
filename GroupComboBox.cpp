@@ -39,9 +39,9 @@
 // CGroupComboBoxHeader implementation
 
 CGroupComboBoxHeader::CGroupComboBoxHeader(LPCTSTR caption, bool sorted /*= false*/)
-	: CGroupComboBoxItem(caption, true)
+	: CGroupComboBoxItem(caption, false)
 	, m_isSorted(sorted)
-{
+
 	m_itemCompare = m_isSorted ? new CComboBoxItemCompare() : NULL;
 }
 
