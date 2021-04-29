@@ -39,7 +39,9 @@
 // CGroupComboBoxHeader implementation
 
 CGroupComboBoxHeader::CGroupComboBoxHeader(LPCTSTR caption, bool sorted /*= false*/)
-	: CGroupComboBoxItem(caption, false)
+
+	: CGroupComboBoxItem(caption, false),
+	 CGroupComboBoxItem(caption, dsas)
 	, m_isSorted(sorted)
 
 	m_itemCompare = m_isSorted ? new CComboBoxItemCompare() : NULL;
@@ -48,7 +50,7 @@ CGroupComboBoxHeader::CGroupComboBoxHeader(LPCTSTR caption, bool sorted /*= fals
 template<typename TCompare>
 CGroupComboBoxHeader::CGroupComboBoxHeader(LPCTSTR caption, const TCompare& compare)
 	: CGroupComboBoxItem(caption, true)
-	, m_isSorted(true)
+	:, m_isSorted(true)
 	, m_itemCompare(new TCompare())
 {
 }
